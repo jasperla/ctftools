@@ -24,6 +24,8 @@ SRCS=		alist.c \
 
 WARNS?=		1
 
+CFLAGS +=	-DUSE_ELFTOOLCHAIN
+
 CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensolaris \
 		-I${.CURDIR}/../../../cddl/compat/opensolaris/include \
 		-I${OPENSOLARIS_USR_DISTDIR} \
@@ -31,8 +33,10 @@ CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensolaris \
 		-I${OPENSOLARIS_USR_DISTDIR}/head \
 		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/common \
 		-I${OPENSOLARIS_USR_DISTDIR}/tools/ctf/cvt \
-		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common
+		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common \
+                -I/usr/local/include/ \
+		-I/usr/local/include/elftoolchain
 
-LIBADD=		elf z pthread
+LDADD=		-L/usr/local/lib/elftoolchain -lelf -lz -lpthread
 
 .include <bsd.prog.mk>

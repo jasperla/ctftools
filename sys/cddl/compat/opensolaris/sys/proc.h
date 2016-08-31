@@ -33,13 +33,16 @@
 #include <sys/kthread.h>
 #include_next <sys/proc.h>
 #include <sys/stdint.h>
+#ifndef __OpenBSD__
 #include <sys/smp.h>
+#endif
 #include <sys/sched.h>
 #include <sys/lock.h>
 #include <sys/mutex.h>
 #include <sys/unistd.h>
+#ifndef __OpenBSD__
 #include <sys/debug.h>
-
+#endif
 #ifdef _KERNEL
 
 #define	CPU		curcpu

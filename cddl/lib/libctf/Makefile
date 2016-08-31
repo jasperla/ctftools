@@ -19,14 +19,17 @@ SRCS=		ctf_create.c \
 MAN=		ctf.5
 
 WARNS?=		2
-CFLAGS+=	-DCTF_OLD_VERSIONS
+CFLAGS+=	-DCTF_OLD_VERSIONS \
+		-DUSE_LIBELF
 
 CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensolaris \
 		-I${.CURDIR}/../../../cddl/compat/opensolaris/include \
 		-I${OPENSOLARIS_USR_DISTDIR}/head \
 		-I${OPENSOLARIS_USR_DISTDIR}/common/ctf \
 		-I${OPENSOLARIS_USR_DISTDIR}/lib/libctf/common \
-		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common
+		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common \
+		-I/usr/local/include/ \
+		-I/usr/local/include/libelf \
 
 LIBADD+=	z
 

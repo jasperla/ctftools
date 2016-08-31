@@ -28,7 +28,9 @@
  * Copyright (c) 2013, Joyent, Inc.  All rights reserved.
  */
 
+#ifndef __OpenBSD__
 #include <sys/sysmacros.h>
+#endif
 #include <sys/param.h>
 #include <sys/mman.h>
 #include <ctf_impl.h>

@@ -33,7 +33,9 @@
 
 #include <sys/types.h>
 #include <sys/errno.h>
+#ifndef __OpenBSD__
 #include <sys/sysmacros.h>
+#endif /* !__OpenBSD__ */
 #include <sys/ctf_api.h>
 
 #ifdef _KERNEL

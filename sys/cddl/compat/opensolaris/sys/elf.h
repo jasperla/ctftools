@@ -27,6 +27,9 @@
 #ifndef	_SYS__ELF_SOLARIS_H_
 #define	_SYS__ELF_SOLARIS_H_
 
+#ifdef USE_LIBELF
+#include <libelf/sys_elf.h>
+#else
 #include_next <sys/elf.h>
 
 #define __sElfN(x)       typedef __CONCAT(__CONCAT(__CONCAT(Elf,__ELF_WORD_SIZE),_),x) x
@@ -113,4 +116,5 @@ typedef	Elf64_Sxword	Sxword;
 #define	Elf_ver_line_5		__ElfN(ver_line_5)
 #define	Elf_ver_need_title	__ElfN(ver_need_title)
 
+#endif /* USE_LIBELF */
 #endif /* !_SYS__ELF_SOLARIS_H_ */

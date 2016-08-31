@@ -36,6 +36,7 @@
 
 #define	MAXOFFSET_T	OFF_MAX
 
+#ifndef __OpenBSD__
 #ifndef _KERNEL
 #include <sys/disk.h>
 
@@ -52,5 +53,5 @@ fstat64(int fd, struct stat *sb)
 	return (ret);
 }
 #endif
-
+#endif
 #endif	/* !_COMPAT_OPENSOLARIS_SYS_STAT_H_ */

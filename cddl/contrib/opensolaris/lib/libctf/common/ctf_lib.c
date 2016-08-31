@@ -39,6 +39,12 @@
 #else
 #include <zlib.h>
 #endif
+#ifdef USE_ELFTOOLCHAIN
+/* Copied from sys/exec_elf.h: these values are not included in elftoolchain. */
+#define ELFMAG          "\177ELF"       /* magic */
+#define SELFMAG		4		/* size of magic */
+#endif
+
 #include <gelf.h>
 
 #ifdef illumos

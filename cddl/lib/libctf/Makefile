@@ -20,7 +20,7 @@ MAN=		ctf.5
 
 WARNS?=		2
 CFLAGS+=	-DCTF_OLD_VERSIONS \
-		-DUSE_LIBELF
+		-DUSE_ELFTOOLCHAIN
 
 CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensolaris \
 		-I${.CURDIR}/../../../cddl/compat/opensolaris/include \
@@ -29,7 +29,7 @@ CFLAGS+=	-I${.CURDIR}/../../../sys/cddl/compat/opensolaris \
 		-I${OPENSOLARIS_USR_DISTDIR}/lib/libctf/common \
 		-I${OPENSOLARIS_SYS_DISTDIR}/uts/common \
 		-I/usr/local/include/ \
-		-I/usr/local/include/libelf \
+		-I/usr/local/include/elftoolchain
 
 LIBADD+=	z
 

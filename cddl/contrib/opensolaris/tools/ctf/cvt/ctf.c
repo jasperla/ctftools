@@ -33,7 +33,11 @@
 #include <strings.h>
 #include <ctype.h>
 #include <zlib.h>
+#ifdef USE_ELFTOOLCHAIN
+#include <libelf.h>
+#else
 #include <elf.h>
+#endif
 
 #include "ctf_headers.h"
 #include "ctftools.h"

@@ -27,8 +27,8 @@
 #ifndef	_SYS__ELF_SOLARIS_H_
 #define	_SYS__ELF_SOLARIS_H_
 
-#ifdef USE_LIBELF
-#include <libelf/sys_elf.h>
+#ifdef USE_ELFTOOLCHAIN
+#include <libelf.h>
 #else
 #include_next <sys/elf.h>
 

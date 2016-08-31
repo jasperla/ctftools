@@ -45,7 +45,11 @@
 
 #include <sys/types.h>
 #include <sys/param.h>
+#ifdef USE_ELFTOOLCHAIN
+#include <libelf.h>
+#else
 #include <sys/elf.h>
+#endif
 #include <sys/ctf.h>
 
 #ifdef	__cplusplus
